@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'providers/task_provider.dart';
 import 'screens/home_screen.dart';
 
 void main() {
@@ -10,17 +12,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Task Manager',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    return ChangeNotifierProvider(
+      create: (_) => TaskProvider()..loadTasks(),
+      child: MaterialApp(
+        title: 'Task Manager',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const HomeScreen(),
+          // '/second': (context) => const SecondScreen(),
+        },
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeScreen(),
-        // '/second': (context) => const SecondScreen(),
-      },
     );
   }
 }
