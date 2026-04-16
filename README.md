@@ -1,17 +1,104 @@
-# task_manager_app
+# 📝 Task Manager App - Remembero
 
-A new Flutter project.
+A clean and modern **Task Manager mobile application** built using Flutter.
+This app allows users to efficiently manage daily tasks with a smooth and visually appealing UI (glassmorphic design).
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+* ✅ Add new tasks with validation
+* 📋 View all tasks in a clean list
+* ✔️ Mark tasks as completed
+* ❌ Delete tasks (swipe & button)
+* 💾 Local storage using SharedPreferences
+* 🌙 Light & Dark mode toggle
+* 🎨 Glassmorphic UI with pastel & dark themes
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧠 Tech Stack
+
+* **Flutter** (UI Framework)
+* **Dart** (Programming Language)
+* **Provider** (State Management)
+* **SharedPreferences** (Local Storage)
+
+---
+
+## ⚙️ Environment & Versions
+
+* Flutter Version: `3.41.6`
+* Dart Version: `3.11.4`
+
+---
+
+## 📁 Project Structure
+
+```
+lib/
+│
+├── models/           # Data models
+├── providers/        # State management (Provider)
+├── services/         # Local storage logic
+├── screens/          # UI screens
+├── custom_widgets/   # Reusable UI components
+└── main.dart         # Entry point
+```
+
+---
+
+## ▶️ Getting Started
+
+### 1. Clone the repository
+
+```
+git clone https://github.com/YOUR_USERNAME/remembero.git
+cd task_manager_app
+```
+
+### 2. Install dependencies
+
+```
+flutter pub get
+```
+
+### 3. Run the app
+
+```
+flutter run
+```
+
+---
+
+## 🎯 Key Highlights
+
+* Clean architecture with separation of concerns
+* Scalable state management using Provider
+* Reusable widget-based UI design
+* Persistent data handling
+* Focus on performance and smooth UX
+
+---
+
+## 📌 Future Improvements
+
+* ✏️ Edit task feature
+* 🔍 Task filtering (All / Completed / Pending)
+* ☁️ Cloud sync (Firebase)
+* 🔔 Notifications & reminders
+
+---
+
+## 👩‍💻 Author
+
+**Pranjal Gaur**
+
+
+Flutter Developer
+
+---
+
+## 📄 License
+
+This project is for assignment/demo purposes.

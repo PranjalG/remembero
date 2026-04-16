@@ -17,9 +17,14 @@ class HomeScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image.asset(
-              'assets/images/remembero_splash.png',
-              height: 56,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12), // adjust as needed
+              child: Image.asset(
+                Theme.of(context).brightness == Brightness.dark
+                    ? 'assets/images/remembero_dark.png'
+                    : 'assets/images/remembero_splash.png',
+                height: 56,
+              ),
             ),
             SizedBox(width: 8),
             Text(

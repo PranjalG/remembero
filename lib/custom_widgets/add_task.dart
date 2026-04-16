@@ -27,24 +27,24 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(
                 colors: [
-                  Colors.pink.shade100.withOpacity(0.25),
-                  Colors.blue.shade100.withOpacity(0.2),
+                  Colors.pink.shade100.withValues(alpha: 0.25),
+                  Colors.blue.shade100.withValues(alpha: 0.2),
                 ],
               ),
-              border: Border.all(
-                color: Colors.white.withOpacity(0.3),
-              ),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [
                 Expanded(
                   child: TextField(
                     controller: controller,
-                    style: const TextStyle(color: Colors.black87),
+                    style: TextStyle(
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
+                    ),
                     decoration: InputDecoration(
                       hintText: "Add a new task...",
                       hintStyle: TextStyle(
-                        color: Colors.grey.shade600,
+                        color: Theme.of(context).textTheme.bodyLarge?.color,
                       ),
                       border: InputBorder.none,
                     ),
@@ -62,24 +62,17 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: LinearGradient(
-                        colors: [
-                          Colors.purple.shade200,
-                          Colors.blue.shade200,
-                        ],
+                        colors: [Colors.purple.shade200, Colors.blue.shade200],
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.purple.withOpacity(0.3),
+                          color: Colors.purple.withValues(alpha: 0.3),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
-                        )
+                        ),
                       ],
                     ),
-                    child: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 22,
-                    ),
+                    child: const Icon(Icons.add, color: Colors.white, size: 22),
                   ),
                 ),
               ],
