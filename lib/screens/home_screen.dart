@@ -14,12 +14,23 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Remember your task !",
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w600,
-            letterSpacing: 0.5,
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image.asset(
+              'assets/images/remembero_splash.png',
+              height: 56,
+            ),
+            SizedBox(width: 8),
+            Text(
+              "Your task assistant",
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w600,
+                letterSpacing: 0.5,
+                fontSize: 18,
+              ),
+            ),
+          ],
         ),
         centerTitle: true,
         actions: [
