@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:task_manager_app/custom_widgets/add_task.dart';
 import 'package:task_manager_app/custom_widgets/task_item.dart';
+import 'package:task_manager_app/providers/theme_provider.dart';
 import '../providers/task_provider.dart';
-// import '../widgets/task_item.dart';
-// import '../widgets/add_task_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,7 +13,28 @@ class HomeScreen extends StatelessWidget {
     final provider = context.watch<TaskProvider>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Task Manager")),
+      appBar: AppBar(
+        title: Text(
+          "Remember your task !",
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0.5,
+          ),
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(
+              context.watch<ThemeProvider>().isDarkMode
+                  ? Icons.dark_mode
+                  : Icons.light_mode,
+            ),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           const AddTaskWidget(),
